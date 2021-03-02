@@ -17,6 +17,7 @@ function App() {
     if (e.key === "Enter") {
       axios(apiurl + "&s=" + state.s).then(({ data }) => {
         let results = data.Search;
+        console.log(results)
 
         setState(prevState => {
           return { ...prevState, results: results }
@@ -24,9 +25,10 @@ function App() {
       });
     }
   }
-  
+  // USER INPUT
   const handleInput = (e) => {
     let s = e.target.value;
+    console.log(s)
 
     setState(prevState => {
       return { ...prevState, s: s }
